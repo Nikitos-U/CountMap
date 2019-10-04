@@ -1,0 +1,39 @@
+package ru.sberbank;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class SomeCountMap<K> implements CountMap<K> {
+    private Map<K,Integer> map;
+
+    public SomeCountMap() {
+        this.map = new HashMap<>();
+    }
+
+    @Override
+    public void add(K key) {
+        if (map.containsKey(key)) {
+            map.put(key, 1);
+        } else {
+            map.put(key,(map.get(key)) + 1);
+        }
+    }
+
+    @Override
+    public int count(K key) {
+        if(map.containsKey(key)){
+            return (map.get(key));
+        }
+        return (0);
+    }
+
+    @Override
+    public Map asMap() {
+        return (map);
+    }
+
+    @Override
+    public void copyTo(Map map) {
+
+    }
+}
