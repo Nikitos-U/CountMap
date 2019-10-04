@@ -1,0 +1,13 @@
+package ru.sberbank;
+
+import java.util.Map;
+
+public interface CountMap <K>{
+     void add (K key);
+
+     int count(K key);
+
+     Map asMap();
+
+     void copyTo(Map map);
+}
